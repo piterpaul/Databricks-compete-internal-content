@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigQuery vs Databricks | Executive Takeout & Dialog Studio</title>
+    <meta name="description" content="Interactive local studio for Databricks takeout meetings, multi-turn competitive dialogue, real-time TCO simulation, verified market risk evidence, and Agentic Data Cloud intelligence by pedropm@google.com.">
+    <!-- Google Fonts for Premium Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <header class="app-header" id="header-container">
+        <div class="logo-area">
+            <div class="logo-icon">✨</div>
+            <div class="title-wrapper">
+                <h1 id="main-app-title">BigQuery <span class="gradient-text">Takeout Studio</span></h1>
+                <p class="subtitle">Databricks Deposition Battlecard &amp; &ldquo;Agentic Data Cloud&rdquo; Strategy &mdash; by <strong>pedropm@google.com</strong></p>
+            </div>
+        </div>
+        <div class="status-badge" id="author-badge">
+            <span class="pulse-dot"></span> Intelligence by pedropm@google.com
+        </div>
+    </header>
+
+    <nav class="tab-nav" id="primary-navigation" role="tablist">
+        <button class="nav-tab active" id="tab-btn-dialog" data-target="panel-dialog" role="tab" aria-selected="true" aria-controls="panel-dialog">
+            <span class="tab-icon">💬</span> Dialog Studio &amp; Multi-Turn Chat
+        </button>
+        <button class="nav-tab" id="tab-btn-pillars" data-target="panel-pillars" role="tab" aria-selected="false" aria-controls="panel-pillars">
+            <span class="tab-icon">⚡</span> 7 Deposition Pillars &amp; Evidence
+        </button>
+        <button class="nav-tab" id="tab-btn-tco" data-target="panel-tco" role="tab" aria-selected="false" aria-controls="panel-tco">
+            <span class="tab-icon">📊</span> TCO &amp; Double-Billing Simulator
+        </button>
+        <button class="nav-tab" id="tab-btn-roadmap" data-target="panel-roadmap" role="tab" aria-selected="false" aria-controls="panel-roadmap">
+            <span class="tab-icon">🚀</span> 3-Phase Takeout Roadmap
+        </button>
+    </nav>
+
+    <main class="main-content">
+        <!-- VIEW 1: DIALOG STUDIO & MULTI-TURN ROLEPLAY -->
+        <section id="panel-dialog" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-dialog">
+            <div class="dialog-container glass-card">
+                <aside class="dialog-sidebar">
+                    <h2 class="sidebar-title" id="persona-selector-title">🎭 Persona Selector</h2>
+                    <p class="sidebar-help">Select your meeting counterpart to calibrate tactical probing, verified market evidence, and strategic rebuttal arguments:</p>
+                    
+                    <div class="persona-list" id="persona-selector" role="radiogroup" aria-labelledby="persona-selector-title">
+                        <button class="persona-btn active" id="persona-hybrid" data-persona="hybrid" aria-checked="true">
+                            <span class="p-icon">⚖️</span>
+                            <div class="p-info">
+                                <strong>Hybrid Table (Recommended)</strong>
+                                <span>FinOps / IT + Data Architecture Leads</span>
+                            </div>
+                        </button>
+                        <button class="persona-btn" id="persona-finops" data-persona="finops" aria-checked="false">
+                            <span class="p-icon">💰</span>
+                            <div class="p-info">
+                                <strong>FinOps &amp; C-Level Direction</strong>
+                                <span>Focus: G2 Billing Overruns, TCO &amp; ROI</span>
+                            </div>
+                        </button>
+                        <button class="persona-btn" id="persona-tech" data-persona="tech" aria-checked="false">
+                            <span class="p-icon">⚙️</span>
+                            <div class="p-info">
+                                <strong>Spark Architect / Data Eng</strong>
+                                <span>Focus: Iceberg DML, Unity Outages &amp; Toil</span>
+                            </div>
+                        </button>
+                        <button class="persona-btn" id="persona-ai" data-persona="ai" aria-checked="false">
+                            <span class="p-icon">🧠</span>
+                            <div class="p-info">
+                                <strong>BI &amp; AI Leadership</strong>
+                                <span>Focus: Multimodal SQL, Proactive Agents &amp; BI</span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="quick-prompts-section">
+                        <h3 class="quick-prompts-title" id="prompts-heading">💡 Starter Probing Hooks</h3>
+                        <div class="quick-prompts-container" id="quick-prompts-list">
+                            <!-- Populated by JS based on Persona -->
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="chat-workspace">
+                    <div class="chat-header">
+                        <div class="active-persona-info">
+                            <span id="chat-persona-badge" class="tag-badge">Mode: Hybrid Table</span>
+                            <span id="turn-counter" class="tag-turn">💬 Turn 0 // Ready for continuous debate</span>
+                        </div>
+                        <div class="header-actions">
+                            <button id="btn-copy-script" class="btn-secondary" title="Copy conversation script to clipboard">📋 Copy Script</button>
+                            <button id="btn-clear-chat" class="btn-secondary" title="Reset Conversation">🔄 Reset</button>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chat-feed">
+                        <div class="message system-msg">
+                            <div class="msg-avatar">🤖</div>
+                            <div class="msg-bubble glass-panel">
+                                <p><strong>Welcome! I am your multi-turn competitive strategy assistant designed by pedropm@google.com.</strong></p>
+                                <p>I am synchronized with the latest market evidence—including verified G2 pricing overruns, documented Unity Catalog availability outages, full Apache Iceberg SQL DML interoperability, and advanced <strong>Agentic Data Cloud &amp; Multimodal SQL</strong> capabilities.</p>
+                                <p>I maintain continuous, fluid multi-turn Q&amp;A flow without needing to clear the screen. After every rebuttal, click any generated <strong>Follow-Up Action Chip</strong> or type naturally in the input box at the bottom!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="chat-input-area" id="chat-form">
+                        <input type="text" id="user-chat-input" class="chat-input" placeholder="Type a customer objection or follow-up argument... (e.g. 'What if they bring up Gartner leadership?')" autocomplete="off" required>
+                        <button type="submit" id="btn-send-msg" class="btn-primary glow-button">
+                            <span>Rebut Objection</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 2: 6 DEPOSITION PILLARS -->
+        <section id="panel-pillars" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-pillars" hidden>
+            <div class="section-header">
+                <h2>⚡ The 6 Technical Deposition Pillars &amp; Market Evidence</h2>
+                <p>Click each card to inspect Databricks architectural vulnerabilities, verified market proofs, strategic discovery probes, and BigQuery technical pivots engineered by pedropm@google.com.</p>
+            </div>
+            <div class="pillars-grid" id="pillars-container">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- VIEW 3: TCO & DOUBLE-BILLING SIMULATOR -->
+        <section id="panel-tco" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-tco" hidden>
+            <div class="tco-layout glass-card">
+                <div class="tco-controls">
+                    <h2>📊 TCO Calculator: Double-Billing Deconstruction</h2>
+                    <p>Simulate the hidden financial drain of idle cluster compute and vendor double-billing (DBU + Cloud VMs) in Databricks against BigQuery's true $0-at-rest serverless model.</p>
+
+                    <div class="slider-group">
+                        <label for="slider-dbu" id="label-dbu">
+                            <span>Monthly Databricks License Spend (DBUs):</span>
+                            <strong id="val-dbu" class="accent-value">$25,000 /mo</strong>
+                        </label>
+                        <input type="range" id="slider-dbu" min="5000" max="150000" step="2500" value="25000" class="custom-slider" aria-labelledby="label-dbu">
+                    </div>
+
+                    <div class="slider-group">
+                        <label for="slider-infra" id="label-infra">
+                            <span>Underlying Cloud Infrastructure Cost (AWS/GCP VMs &amp; EBS):</span>
+                            <strong id="val-infra" class="accent-value">$20,000 /mo</strong>
+                        </label>
+                        <input type="range" id="slider-infra" min="5000" max="150000" step="2500" value="20000" class="custom-slider" aria-labelledby="label-infra">
+                    </div>
+
+                    <div class="slider-group">
+                        <label for="slider-idle" id="label-idle">
+                            <span>Estimated Idle Compute / Cold Start &amp; Cooldown Waste:</span>
+                            <strong id="val-idle" class="warn-value">35% (Typical for Spark Clusters)</strong>
+                        </label>
+                        <input type="range" id="slider-idle" min="10" max="70" step="5" value="35" class="custom-slider" aria-labelledby="label-idle">
+                        <small class="slider-hint">On traditional clusters and SQL Warehouses, auto-termination delays (15-20 mins) continuously burn both DBU licenses and full cloud VMs without running productive queries.</small>
+                    </div>
+
+                    <div class="proof-box glass-panel">
+                        <h4>🏆 Industry Benchmark: J.B. Hunt 60% Savings</h4>
+                        <p>By eliminating vendor double-billing and migrating to BigQuery's true serverless execution (featuring 3x-5x Capacitor compression and $0 idle billing), <strong>J.B. Hunt achieved a certified 60% reduction in enterprise analytics TCO</strong>. Verified G2 reviews confirm Databricks invoicing predictability remains a persistent executive risk.</p>
+                    </div>
+                </div>
+
+                <div class="tco-visualization">
+                    <h3>Estimated Annual TCO Visual Comparison</h3>
+                    <div class="comparison-chart">
+                        <div class="bar-column">
+                            <div class="bar-title">Databricks (Double-Billing Model)</div>
+                            <div class="bar-wrapper">
+                                <div id="bar-dbx-idle" class="bar segment-idle" title="Idle Compute / Cooldown Waste">
+                                    <span class="bar-label">Idle Cooldown Waste</span>
+                                </div>
+                                <div id="bar-dbx-productive" class="bar segment-dbx-active" title="Productive Compute">
+                                    <span class="bar-label">Productive VMs + DBUs</span>
+                                </div>
+                            </div>
+                            <div id="total-dbx-year" class="cost-total dbx-cost">$540,000 / yr</div>
+                        </div>
+
+                        <div class="bar-column">
+                            <div class="bar-title">Google BigQuery (True Serverless)</div>
+                            <div class="bar-wrapper">
+                                <div id="bar-bq-productive" class="bar segment-bq" title="BigQuery Editions / On-Demand">
+                                    <span class="bar-label">Serverless Compute ($0 Idle)</span>
+                                </div>
+                            </div>
+                            <div id="total-bq-year" class="cost-total bq-cost">$232,200 / yr</div>
+                        </div>
+                    </div>
+
+                    <div class="savings-card neon-border">
+                        <div class="savings-title">Estimated TCO Savings with BigQuery</div>
+                        <div class="savings-amount" id="tco-savings-val">-$307,800 / yr (57% savings)</div>
+                        <p class="savings-subtext">Zero-risk financial benefit to present before C-Suite &amp; FinOps leaders during Phase 1 of the Takeout timeline.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 4: 3-PHASE TAKEOUT ROADMAP -->
+        <section id="panel-roadmap" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-roadmap" hidden>
+            <div class="section-header">
+                <h2>🚀 3-Phase Takeout Roadmap (Enterprise &amp; Adevinta Pattern)</h2>
+                <p>A risk-mitigated consolidation strategy formulated by pedropm@google.com to execute a frictionless takeout while neutralizing cultural resistance from Spark engineering teams.</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-card glass-card step-1">
+                    <div class="step-badge">Phase 1</div>
+                    <div class="step-time">Months 0 &ndash; 4</div>
+                    <h3 class="step-title">TCO Discovery &amp; Quick-Win BI Consolidation</h3>
+                    <ul class="step-details">
+                        <li><strong>FinOps &amp; Incident Audit:</strong> Audit real DBU invoices and underutilized Cloud VM telemetry; inspect the last 5-10 internal ticket incidents regarding cluster lags and billing spikes.</li>
+                        <li><strong>BI / Dashboard Offload:</strong> Transition intermittent and high-concurrency reporting workloads (Looker, PowerBI, ad-hoc analyst queries) directly to BigQuery.</li>
+                        <li><strong>Immediate Impact:</strong> Achieve sub-second query speeds via <strong>BigQuery BI Engine</strong> with zero cold starts and immediate demonstrable TCO savings in quarter one.</li>
+                    </ul>
+                    <div class="step-target">🎯 Target: Executive Sponsorship &amp; Self-Funding</div>
+                </div>
+
+                <div class="timeline-card glass-card step-2">
+                    <div class="step-badge">Phase 2</div>
+                    <div class="step-time">Months 4 &ndash; 12</div>
+                    <h3 class="step-title">Open Lakehouse Parity &amp; Zero Data Movement</h3>
+                    <ul class="step-details">
+                        <li><strong>Zero Data Duplication:</strong> Configure <strong>Google BigLake (Lakehouse for Iceberg)</strong> to directly query, stream, and execute full read/write DML on existing Delta and Iceberg tables in-place over S3/GCS/ADLS buckets with unified Cloud IAM security.</li>
+                        <li><strong>Autonomous Table Care:</strong> Eradicate manual Databricks <code>OPTIMIZE</code> and <code>VACUUM</code> jobs; BigQuery performs automated small file compaction, re-clustering, and garbage collection for free.</li>
+                        <li><strong>Spark Acceleration:</strong> Migrate irreplaceable complex Spark scripts to <strong>Dataproc Serverless</strong> running Google's <strong>Lightning Engine</strong> (executing up to <strong>4.5x faster</strong> than open-source alternatives with zero cluster sizing toil).</li>
+                    </ul>
+                    <div class="step-target">🎯 Target: Eliminate Lock-In &amp; DevOps Toil</div>
+                </div>
+
+                <div class="timeline-card glass-card step-3">
+                    <div class="step-badge">Phase 3</div>
+                    <div class="step-time">Months 12 &ndash; 18</div>
+                    <h3 class="step-title">AI Unification &amp; Agentic Data Cloud</h3>
+                    <ul class="step-details">
+                        <li><strong>Multimodal In-Warehouse AI:</strong> Empower business analysts in <strong>BigQuery Studio</strong> to train predictive models (BQML) and invoke Gemini LLMs directly on images, audio, video, and PDF docs in clean SQL without exporting data to Spark notebooks.</li>
+                        <li><strong>Proactive Agentic Workflows:</strong> Deploy autonomous Conversational Analytics and Deep Research Agents to execute unattended Root Cause Analysis (RCA) on metric anomalies and push natural language briefs directly to organizational email.</li>
+                        <li><strong>Final Consignment:</strong> Fully decommission remnant Databricks workspaces and permanently eradicate vendor DBU double-billing from the organizational budget.</li>
+                    </ul>
+                    <div class="step-target">🎯 Target: Unified Platform &amp; Agentic AI Architecture</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>⚡ Enterprise Intelligence by <strong>pedropm@google.com</strong> | Data &amp; AI Takeout Architecture Studio &bull; All rights reserved &amp; locally rendered.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
